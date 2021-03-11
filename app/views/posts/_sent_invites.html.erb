@@ -1,0 +1,9 @@
+<ul>Sent invitations to:
+  <% @sent_invites.each do |friendship| %>
+    <li>
+      <span class="profile-link">
+        <%= link_to friendship.friend.name, user_path(friendship.friend), class: 'profile-link' %>
+      </span>
+    </li>
+  <% end %>
+</ul>
