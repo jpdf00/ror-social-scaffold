@@ -24,7 +24,7 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-  @friendship = Friendship.find(params[:id])
+    @friendship = Friendship.find(params[:id])
 
     respond_to do |format|
       if @friendship.update(confirmed: true)
@@ -38,6 +38,16 @@ class FriendshipsController < ApplicationController
       end
     end
   end
+
+  # def destroy
+  #  @friendship = Friendship.find(params[:id])
+
+  #  @friendship.destroy
+  #  respond_to do |format|
+  #    format.html { redirect_to root_path, notice: 'Friendship was successfully destroyed.' }
+  #    format.json { head :no_content }
+  #  end
+  #end
 
   private
 
