@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
+    @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
     timeline_posts
   end
 

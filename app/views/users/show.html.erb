@@ -1,12 +1,6 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
 
-  <h2>Pending invitations</h2>
-    <ul>
-      <!-- <#%= render @received_invites %> -->
-      <%= render @pending_invites %>
-    </ul>
-
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
