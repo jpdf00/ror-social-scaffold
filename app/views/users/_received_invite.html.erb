@@ -1,0 +1,6 @@
+<li>
+  Name: <%= received_invite.user.name %>
+  <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(received_invite.user), class: 'profile-link' %>
+  </span>
+</li>
