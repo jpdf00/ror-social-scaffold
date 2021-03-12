@@ -39,15 +39,15 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  # def destroy
-  #  @friendship = Friendship.find(params[:id])
+  def destroy
+    @friendship = Friendship.find(params[:id])
 
-  #  @friendship.destroy
-  #  respond_to do |format|
-  #    format.html { redirect_to root_path, notice: 'Friendship was successfully destroyed.' }
-  #    format.json { head :no_content }
-  #  end
-  #end
+    @friendship.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Friendship was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
 
