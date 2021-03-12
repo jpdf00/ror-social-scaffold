@@ -7,8 +7,6 @@
 
 <%= added_friend(user, @friendship) %>
 
-  <div class="timeline">
-    <h3>Pending invitations</h3><br>
+<% if current_user.id == user.id %>
     <%= render 'posts/received_invites', received_invites: @received_invites %><br>
-    <%= render 'posts/sent_invites' %>
-  </div>
+<% end %>
