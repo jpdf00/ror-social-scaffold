@@ -1,6 +1,6 @@
 <br>
 <h3>Received invitations from:</h3> <br>
-  <% @received_invites.each do |friendship| %>
+  <% received_invites.each do |friendship| %>
       <span class="profile-link">
         <%= link_to friendship.user.name, user_path(friendship.user), class: 'profile-link' %>
       </span>
