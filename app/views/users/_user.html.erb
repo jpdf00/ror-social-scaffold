@@ -5,4 +5,10 @@
   </span>
 </li>
 
-<%= render 'invite_button', user: user, friendship: @friendship %> <!-- if not friends -->
+<%= added_friend(user, @friendship) %>
+
+  <div class="timeline">
+    <h3>Pending invitations</h3><br>
+    <%= render 'posts/received_invites', received_invites: @received_invites %><br>
+    <%= render 'posts/sent_invites' %>
+  </div>
