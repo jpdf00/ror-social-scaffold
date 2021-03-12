@@ -1,12 +1,9 @@
-<ul>Received invitations from:
+<br>
+<h3>Received invitations from:</h3> <br>
   <% @received_invites.each do |friendship| %>
-    <li>
       <span class="profile-link">
         <%= link_to friendship.user.name, user_path(friendship.user), class: 'profile-link' %>
       </span>
-    </li>
-
-    <%= render 'invite_confirm', friendship: friendship  %>
-    <%= render 'invite_reject', friendship: friendship  %>
+      <%= render 'invite_confirm', friendship: friendship  %>
+      <%= render 'invite_reject', friendship: friendship  %>
   <% end %>
-</ul>
