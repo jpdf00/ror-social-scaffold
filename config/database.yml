@@ -65,6 +65,12 @@ development:
 test:
   <<: *default
   database: ror_social_scaffold_test
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: admin
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
