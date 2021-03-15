@@ -1,6 +1,2 @@
 <h3>Sent invitations to:</h3>
-  <% @sent_invites.each do |friendship| %>
-      <span class="profile-link">
-        <%= link_to friendship.friend.name, user_path(friendship.friend), class: 'profile-link' %>
-      </span>
-  <% end %>
+  <%= sent_invites(@sent_invites) %>
