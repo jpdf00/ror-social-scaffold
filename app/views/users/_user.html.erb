@@ -7,6 +7,5 @@
 
 <%= added_friend(user, @friendship) %>
 
-<% if current_user.id == user.id %>
-    <%= render 'posts/received_invites', received_invites: @received_invites %><br>
-<% end %>
+<%= rec_invites(user, @received_invites) %>
+<br>
