@@ -10,6 +10,8 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
+    @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
+    @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
 
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
