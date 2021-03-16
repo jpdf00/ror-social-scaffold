@@ -1,8 +1,9 @@
 module UserHelper
   def added_friend(user, friendship)
-    if current_user.id != user.id && !current_user.friend?(user)
-      render 'invite_button', user: user, friendship: friendship
-    end
+    return if current_user.id == user.id || current_user.friend?(user)
+
+    render 'invite_button', user: user,
+                            friendship: friendship
   end
 
   def rec_invites(user, invite)
