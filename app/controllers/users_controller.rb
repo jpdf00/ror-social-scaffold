@@ -18,6 +18,3 @@ class UsersController < ApplicationController
                                                                                 user_id: @user.id))
   end
 end
-
-# @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
-# @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
