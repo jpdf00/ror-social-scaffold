@@ -3,11 +3,15 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
+    @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
     timeline_posts
   end
 
   def create
     @post = current_user.posts.new(post_params)
+    @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
+    @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
 
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
@@ -20,7 +24,12 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
+    @timeline_posts ||= current_user.posts.ordered_by_most_recent.includes(:user)
+    @timeline_posts += current_user.confirmed_friends.map do |friend|
+      friend.posts.ordered_by_most_recent.includes(:user)
+    end
+    @timeline_posts.flatten!
+    @timeline_posts
   end
 
   def post_params
