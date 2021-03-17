@@ -66,6 +66,12 @@ a {
   }
 }
 
+.aside {
+  position: absolute;
+  left: 5px;
+  margin: 5px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -135,6 +141,17 @@ a {
   }
 }
 
+.confirmations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+
+  .friends_buttons {
+    margin-left: 60px;
+  }
+}
+
 form {
   width: 80%;
   margin: 8px 0;
@@ -168,8 +185,7 @@ form {
 
   input[type="submit"] {
     padding: 8px;
-    margin-right: 5px;
-    width: 100%;
+    width: fit-content;
     border: none;
     border-radius: 4px;
     background-color: $primary-color-dark;
@@ -352,9 +368,4 @@ form {
   .users-section {
     width: 50%;
   }
-}
-
-.confirmations {
-  display: flex;
-  align-content: center;
 }

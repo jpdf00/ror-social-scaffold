@@ -5,10 +5,10 @@ module ReceivedInvitesHelper
       out += '<div class="confirmations">'
       out += '<span class="profile-link">'
       out += link_to friendship.user.name, user_path(friendship.user), class: 'profile-link'
-      out += '</span>'
+      out += '</span><div class="friends_buttons">'
       out += render 'posts/invite_confirm', friendship: friendship
       out += render 'posts/invite_reject', friendship: friendship
-      out += '</div>'
+      out += '</div></div>'
     end
     out.html_safe
   end
