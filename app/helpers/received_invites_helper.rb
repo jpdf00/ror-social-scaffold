@@ -6,7 +6,7 @@ module ReceivedInvitesHelper
       out += '<span class="profile-link">'
       out += link_to friendship.user.name, user_path(friendship.user), class: 'profile-link'
       out += '</span><div class="friends_buttons">'
-      out += render 'posts/invite_confirm', friendship: friendship
+      out += render 'posts/invite_confirm', friendship: @blank_friendship, user: friendship.user
       out += render 'posts/invite_reject', friendship: friendship
       out += '</div></div>'
     end
