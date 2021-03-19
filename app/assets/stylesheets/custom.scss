@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
-
 $primary-color-dark: #689f38;
 $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
@@ -67,6 +66,12 @@ a {
   }
 }
 
+.aside {
+  position: absolute;
+  left: 5px;
+  margin: 5px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -74,8 +79,8 @@ a {
   padding: 16px;
 }
 
-.notice,
-.alert {
+.alert,
+.notice {
   margin-bottom: 8px;
   width: 100%;
   height: 30px;
@@ -98,8 +103,8 @@ a {
   color: red;
 }
 
-.new_post,
-.new_comment {
+.new_comment,
+.new_post {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,6 +141,17 @@ a {
   }
 }
 
+.confirmations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+
+  .friends_buttons {
+    margin-left: 60px;
+  }
+}
+
 form {
   width: 80%;
   margin: 8px 0;
@@ -169,7 +185,7 @@ form {
 
   input[type="submit"] {
     padding: 8px;
-    width: 50%;
+    width: fit-content;
     border: none;
     border-radius: 4px;
     background-color: $primary-color-dark;
@@ -222,7 +238,7 @@ form {
     float: left;
 
     .post-author {
-      margin: 0 0 8px 0;
+      margin: 0 0 8px;
       color: $primary-color-dark;
       text-transform: capitalize;
     }
@@ -275,6 +291,12 @@ form {
   }
 }
 
+.profile-link {
+  font-size: 1em;
+  margin: 0 0 8px;
+  color: $primary-color-dark;
+}
+
 .users-section {
   width: 100%;
   margin: 10px;
@@ -286,8 +308,8 @@ form {
   }
 
   .profile-link {
-    font-size: 0.8em;
-    margin: 0 0 8px 0;
+    font-size: 1em;
+    margin: 0 0 8px;
     color: $primary-color-dark;
   }
 }
@@ -329,8 +351,8 @@ form {
 
   .new_post,
   .timeline,
-  .users-section,
-  .user-section {
+  .user-section,
+  .users-section {
     width: 70%;
   }
 }
@@ -342,8 +364,8 @@ form {
 
   .new_post,
   .timeline,
-  .users-section,
-  .user-section {
+  .user-section,
+  .users-section {
     width: 50%;
   }
 }

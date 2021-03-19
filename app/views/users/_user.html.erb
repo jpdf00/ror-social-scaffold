@@ -4,3 +4,8 @@
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
   </span>
 </li>
+
+<%= added_friend(user, @friendship) %>
+
+<%= rec_invites(user, @received_invites) %>
+<br>
