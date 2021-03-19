@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @peding_invites = Friendship.all
     @sent_invites = Friendship.where(user_id: current_user.id, confirmed: false)
     @received_invites = Friendship.where(friend_id: current_user.id, confirmed: false)
+    @blank_friendship = Friendship.new
   end
 
   def show
